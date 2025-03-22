@@ -12,7 +12,7 @@ import frameworks.backend1.spring.repositorio.ProductoRepository;
 public class ProductoService {
 	
 	@Autowired
-	ProductoRepository repositorio;
+	private ProductoRepository repositorio;
 	
 	public List<Producto> listarProductos(){
 		return repositorio.findAll();
@@ -31,7 +31,6 @@ public class ProductoService {
 	}
 	
 	public Producto modificarProducto(Producto producto) {
-		repositorio.deleteById(producto.getId());
 		return repositorio.save(producto);
 	}
 }
